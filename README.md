@@ -1,41 +1,30 @@
-![image](https://github.com/user-attachments/assets/434cfe75-d085-4529-8308-9c22a43358b4)
-
 # LegalBot – Smart Legal Assistant  
+## Project Objectives:
 
-## Introduction  
-LegalBot is an intelligent legal assistant designed to help users search and understand legal documents related to various fields such as population, marriage and family, children's rights, gender equality, and domestic violence prevention. The project is built using a Retrieval-Augmented Generation (RAG) architecture, combining natural language processing (NLP) and deep learning models to optimize information retrieval and provide contextually accurate answers.  
+- Develop a chatbot that supports Q&A on legal documents related to five topics: Children, Gender Equality, Marriage and Family, Domestic Violence Prevention, and Population.
+- Help people access legal information easily, quickly, and accurately.
 
-## Project Goals  
-- **Enhance information retrieval:** Shift from traditional Google search to an RAG-based model, improving search efficiency and answer accuracy.  
-- **Provide quick legal reference:** Enable users to efficiently look up current legal regulations and official guidelines.  
-- **Contribute to legal awareness:** Help the public better understand their rights and obligations through accessible and comprehensible legal information.  
+## Approach:
 
-## Project Components  
-### Data Collection & Preprocessing  
-- Gather legal documents from official sources such as the Government Portal and relevant ministry websites.  
-- Process data (chunking, filtering unnecessary text) and store it in JSONL and CSV formats.  
-- Use embedding models to convert text into vectors and store them in a vector database (using Faiss).  
+- Utilize Retrieval-Augmented Generation (RAG) for information retrieval and response generation.
+- Apply the Vietnamese-document-embedding model and FAISS for efficient information search in the database.
+- Fine-tune the Llama 3.2B model to decompose complex questions into smaller sub-questions.
+- Fine-tune the Pho BERT base v2 135M model to classify each sub-question into predefined categories.
 
-### Text Analysis & Classification  
-- Apply the **PhoBERT** model to classify user queries into topics: Children, Marriage & Family, Gender Equality, Population, and Domestic Violence Prevention.  
-- Evaluate model performance with Accuracy and F1-score exceeding 96%.  
+## Chatbot Deployment:
 
-### Chatbot Deployment  
-- Design a chatbot pipeline based on RAG architecture.  
-- Fine-tune **Llama 3.2 3B** for question segmentation and **PhoBERT** for query classification.  
-- Integrate embeddings with a vector database to retrieve relevant information and generate context-aware responses.  
+- The chatbot is hosted on Cloud to ensure performance and scalability.
+- Gradio is used to enhance the user interface for better interaction. Ollama serves as the API endpoint for Gemma3.
+- Legal documents are stored in JSONL, FAISS Index, and Chunk CSV formats to enable fast and efficient retrieval.
+![image](https://github.com/user-attachments/assets/434cfe75-d085-4529-8308-9c22a43358b4)
+## Results Achieved:
 
-### Data Analysis, Summarization & Reporting  
-- Perform statistical analysis on query distribution, question length, label distribution, and data visualization (histograms, word clouds, cosine similarity).  
-- Generate reports, identify limitations, and propose future improvements.  
+- The chatbot can accurately respond to legal inquiries within the five specified topics.
+- Chatbot accuracy: Multiple choice: 83%, Open-ended: 42%
 
-## System Requirements  
-### Hardware  
-- A GPU with sufficient power to support deep learning model fine-tuning and inference.  
+## Roles:
 
-### Software  
-- Python 3.7+  
-- Required libraries: Faiss, Sentence Transformer, Hugging Face Transformers, PyTorch, etc.  
+- Data classification
+- Model evaluation
 
-### Data  
-- Legal documents collected from official sources (PDF, HTML).  
+## Team Size: 4
